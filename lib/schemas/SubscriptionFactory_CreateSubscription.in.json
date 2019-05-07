@@ -1,0 +1,59 @@
+{
+    "type": "object",
+    "properties": {
+        "billingAccountName": {
+            "required": true,
+            "type": "string"
+        },
+        "invoiceSectionName": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Subscription Creation Parameters required to create a new Azure subscription.",
+            "properties": {
+                "additionalParameters": {
+                    "additionalProperties": {
+                        "type": "object"
+                    },
+                    "description": "Additional, untyped parameters to support custom subscription creation scenarios.",
+                    "type": "object"
+                },
+                "billingProfileId": {
+                    "description": "The ARM id of the billing profile.",
+                    "type": "string"
+                },
+                "costCenter": {
+                    "description": "optional customer cost center",
+                    "type": "string"
+                },
+                "displayName": {
+                    "description": "The display name of the subscription.",
+                    "type": "string"
+                },
+                "owner": {
+                    "description": "rbac owner of the subscription",
+                    "properties": {
+                        "objectId": {
+                            "description": "Object id of the Principal",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "objectId"
+                    ],
+                    "type": "object"
+                },
+                "skuId": {
+                    "description": "The commerce id of the sku.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}
